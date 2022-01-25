@@ -1,4 +1,4 @@
-# Clone coding | Lunch suggestion bot: Yeongju Bot | Python 3.9.7
+# Clone coding | Lunch suggestion bot: Yeongju Bot | Python 3.9.7, slackclient==1.3.2
 
 ## Contents
   * [Flow](#flow)
@@ -82,7 +82,22 @@ Then, `OAuth Tokens for Your Workspace` will be generated.
 
 
 ### 6. Code your Bot
+Based on slack-starterbot, change `SlackClient` into `slack` and add several comments. 
+1. for understanding constant: RTM_READ_DELAY, some descriptions of RTM were added. 
+2. Customed Regex pattern `^pattern` into `pattern` to mention bot flexibly; in the middle of message text. 
+3. Add description for understanding RegEx grammar: RegEx note
 
+Workflow
+1. Get bot token from environment variable and instantiates `SlackClient`
+2. Connect Slack RTM API, Get Bot's User ID from Web API method: `auth.test`
+3. Parse every slack event (`parse_bot_commands`) and find message directed at The Bot
+4. Custom `handle_command` function to achieve Bot's purpose
+
+summarized each function. focused on 'what for, result'.
+- `parse_bot_commands`: Parse slack events to find any command **directed at slack bot**. Use `parse_direct_mention` for parsing.
+    - `parse_direct_mention`: Find **every direct message** using regular expression (REGEX)
+- `handle_command`: Execute bot commands. Main part of bot script.
+    - [events](https://api.slack.com/events)
 
 
 

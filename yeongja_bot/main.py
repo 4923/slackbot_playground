@@ -4,7 +4,8 @@
 import os
 import time
 import re
-from slackclient import SlackClient
+from slack import SlackClient
+from slack_sdk import WebClient # for Slack Handler
 
 # initiate Slack Client
 slack_client = SlackClient(

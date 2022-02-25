@@ -65,7 +65,7 @@ class SlackAPI:
         return result
 
 
-token = "xoxb-3020057638645-3203557476037-ls74u6T70IwVB8yhEsTzuVrn"
+token = "xoxb-3020057638645-3203557476037-RpVrpvigzG8dtqE4bSi5xCuv"
 slack = SlackAPI(token)
 
 channel_name = "일반"
